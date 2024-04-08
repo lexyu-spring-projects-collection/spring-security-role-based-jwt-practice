@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-security-role-based-jwt-practice
+  datasource:
+    url: jdbc:h2:file:D:/h2_data/demo;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      path: /h2
+      enabled: true
+      settings:
+        web-allow-others: false
+
+server:
+  port: 9321
+
