@@ -33,6 +33,7 @@ public class AuthenticationService {
 
 	private final PasswordEncoder encoder;
 	private final UserRepository userRepository;
+
 	private final RoleRepository roleRepository;
 
 	private final AuthenticationManager authenticationManager;
