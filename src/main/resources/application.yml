@@ -2,22 +2,24 @@ spring:
   application:
     name: spring-security-role-based-jwt-practice
   datasource:
-    url: jdbc:h2:file:D:/h2_data/demo;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://127.0.0.1:3306/local_testing?useSSL=false&serverTimezone=Asia/Taipei
+    # jdbc:h2:file:D:/h2_data/demo;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    username: root
+    password: "P@ssw0rd"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    org.h2.Driver
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+#    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     hibernate:
       ddl-auto: update
-  h2:
-    console:
-      path: /h2
-      enabled: true
-      settings:
-        web-allow-others: false
+#  h2:
+#    console:
+#      path: /h2
+#      enabled: false
+#      settings:
+#        web-allow-others: false
 
 server:
-  port: 9321
+  port: 9000
 

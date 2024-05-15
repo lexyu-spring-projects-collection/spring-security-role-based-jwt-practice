@@ -22,21 +22,21 @@ public class SpringSecurityRoleBasedJwtPracticeApplication  {
 		SpringApplication.run(SpringSecurityRoleBasedJwtPracticeApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner run(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder encoder){
-		return args -> {
-			if (roleRepository.findByAuthority("ADMIN").isPresent()) return;
-
-			Role adminRole = roleRepository.save(new Role("ADMIN"));
-			Role userRole = roleRepository.save(new Role("USER"));
-
-			Set<Role> roles = new HashSet<>();
-			roles.add(adminRole);
-
-			User admin = new User(1L, "admin", encoder.encode("P@SSW0RD"), roles);
-
-			userRepository.save(admin);
-			generateRsaKey();
-		};
-	}
+//	@Bean
+//	CommandLineRunner run(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder encoder){
+//		return args -> {
+//			if (roleRepository.findByAuthority("ADMIN").isPresent()) return;
+//
+//			Role adminRole = roleRepository.save(new Role("ADMIN"));
+//			Role userRole = roleRepository.save(new Role("USER"));
+//
+//			Set<Role> roles = new HashSet<>();
+//			roles.add(adminRole);
+//
+//			User admin = new User(1L, "admin", encoder.encode("P@SSW0RD"), roles);
+//
+//			userRepository.save(admin);
+//			generateRsaKey();
+//		};
+//	}
 }
